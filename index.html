@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Gosolar</title>
+
+  <!-- Font Awesome Icons -->
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="../static/css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <img src="../static/img/sun2.jpg" alt="sunrise" style="width:100%;height:200px;">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><font size="7"><b><i>GOSolar!</i></b></font></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../static/about.html"><font size="4">About</font></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://github.com/iborozan/solar"><font size="4">Github</font></a>
+          </li> 
+	  <!--
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+	  -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Masthead -->
+<header class="masthead">
+  
+    <h5 style="margin-left: 20px; margin-top: 10px; color: black"><b>Enter your location / address</b></h5>
+    
+      <div class="row">
+            <div class="col-md-7">
+        	<form class="form-horizontal" action="/output" method="POST" style="margin-left:20px">
+                    <fieldset>
+                        <!-- Address form -->
+
+                        <!-- <h6>Address</h6> -->
+
+                        <!-- address-line1 input-->
+			<!--
+                        <div class="control-group">
+                            <label class="col-sm-2 control-label">Address Line 1</label>
+                            <div class="col-sm-10">
+                                <input id="address-line1" name="address-line1" type="text" placeholder="Address Line 1" class="form-control">
+                                <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                            </div>
+                        </div>
+			-->
+                        <!-- address-line2 input-->
+			<!--
+                        <div class="control-group">
+                            <label class="col-sm-2 control-label">Address Line 2</label>
+                            <div class="col-sm-10">
+                                <input id="address-line2" name="address-line2" type="text" placeholder="Address Line 2" class="form-control">
+                                <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                            </div>
+                        </div>
+			-->
+                        <!-- city input-->
+                        <div class="control-group">
+                            <label class="col-sm-2 control-label">City / Town</label>
+                            <div class="col-sm-10">
+                                <input id="city" name="city" type="text" placeholder="City" class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <!-- region input-->
+                        <!--<div class="control-group">
+                            <label class="col-sm-2 control-label">State</label>
+                            <div class="col-sm-10">
+                                <input id="state" name="state" type="text" placeholder="State"
+                                class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>-->
+                        <!-- postal-code input-->
+                        <div class="control-group">
+                            <label class="col-sm-2 control-label">Postal Code</label>
+                            <div class="col-sm-10">
+                                <input id="postal-code" name="postal_code" type="text" placeholder="Postal Code" class="form-control">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="col-sm-2 control-label">Province</label>
+                            <div class="col-sm-10">
+                                <select id="provance" name="province" class="input-xlarge">
+                                  <option value="" selected="selected">-</option>
+				   <option value="ON">Ontario</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+
+                    <fieldset>
+		      <br>
+		      
+                      <h5><b>Enter your solar panel information</b></h5>
+                      <div class="control-group">
+                          <label class="col-sm-2 control-label">Installation size</label>
+                          <div class="col-sm-10">
+                              <input id="area" name="size" type="number" placeholder="kW" class="form-control">
+                              <p class="help-block"><font size="3.5">This should be the size of your solar installation in kW = Array Area (m²) × 1 kW/m² × Module Efficiency (%)</font></p>
+                          </div>
+                      </div>
+                      <!-- postal-code input-->
+                      <div class="control-group">
+                          <label class="col-sm-2 control-label">Tilt</label>
+                          <div class="col-sm-10">
+                              <input id="tilt" name="tilt" type="number" placeholder="Tilt" class="form-control">
+                              <p class="help-block"><font size="3.5">Tilt of your roof/where solar array would be placed in degrees</font></p>
+                          </div>
+                      </div>
+
+                      <div class="control-group">
+                          <label class="col-sm-2 control-label">Direction/Azimuth</label>
+                          <div class="col-sm-10">
+                              <select id="direction" name="azimuth" class="input-xlarge">
+                                  <option value="" selected="selected">Select an azimuth angle</option>
+                                  <option>S</option>
+                                  <option>SW</option>
+                                  <option>W</option>
+                                  <option>NW</option>
+                                  <option>N</option>
+                                  <option>NE</option>
+                                  <option>E</option>
+                                  <option>SE</option>
+                              </select>
+                              <p class="help-block"><font size="3.5">This is the north/south direction the solar array would be facing</font></p>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="pull-left">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <p class="help-block"><font size="3.5">Calculations may take a moment</font></p>
+
+                          </div>
+                        </div>
+                      </div>
+                   </fieldset>
+
+                   <input type="hidden" name="csrfmiddlewaretoken" value="GP5bLXYF02rdOEO5DTcPVwz4UmmwQcAzK8GxPtbs9uD00PQC5CmjIHvoz73xmV2O">
+                </form>
+        	</div>
+
+	    <div class="col-md-5">
+        <div class="container">
+          <h2 style="text-align: left; color:red">Predictions:</h2>
+            <div class="row col-md-10 col-md-offset-2 custyle">
+            <table class="table table-striped custab" style="width: 500px; margin-left: 0px">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><font size="5">Value</font></th>
+                    <th><font size="5">Amount</font></th>
+                </tr>
+            </thead>
+                    <tbody><tr>
+                        <td></td>
+                        <td><font size="5"><b>Annual Energy Output (kWh/year)</font></b></td>
+                        <td><font size="4">{{sol_energy}}</font></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><font size="5"><b>Annual Return (CAD)</font></b></td>
+                        <td><font size="4">{{savings}}</font></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><font size="5"><b>Estimated cost (CAD)</font></b></td>
+                        <td><font size="4">{{cost}} +/- {{cost_ci}}</font></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><font size="5"><b>Break Even Time (Years)</font></b></td>
+                        <td><font size="4">{{b1}} +/- {{b2}}</font></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><font size="5"><b>Optimal Tilt (degrees)</font></b></td>
+                        <td><font size="4">{{optimum_tilt}}</font></td>
+                    </tr>
+            </tbody></table>
+	    <!--
+	    <p class="help-block" style="text-align: left"><font size="3.0"><sup>*</sup>Estimate on the annual return is based on the current electricity price in Ontario (13.4 cents/kWh) with a projected and inflation adjusted 8.9% rate of increase</font></p>
+	    <p class="help-block" style="text-align: left"><font size="3.0"><sup>**</sup>Estimated cost is based on the US market and projected to Canadian dollars</font></p>
+	    <p class="help-block" style="text-align: left"><font size="3.0"><sup>***</sup>Break-even time is based on electricity prices projected over a 10 year period</font></p>
+            -->
+	    <p class="help-block" style="text-align: left"><font size="3.0">For more information see <a href="../static/about.html">about</a> and the projects <a href="https://github.com/iborozan/solar"> Github </a> page </font></p>
+            </div>
+        </div>
+      </div>
+</div>
+    <!--
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+        </div>
+      </div>
+    </div>
+    -->
+  </header>
+
+ 
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - hbaranalytics</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../static/js/creative.min.js"></script>
+
+</body>
+
+</html>
